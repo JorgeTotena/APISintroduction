@@ -1,6 +1,6 @@
 import requests
 from send_sms import *
-api_key = "a52d9ce51c5eed0cf16d9ccfa0367800"
+api_key = os.environ.get("OPEN_WEATHER_API_KEY")
 MY_LAT = 4.395820
 MY_LON = -76.069832
 UNITS = "metric"
@@ -32,12 +32,13 @@ for i in list:
         print("Bring an umbrella")
     print(description)
 if Rain:
-    message = client.messages.create(
-        body="Hay pronóstico de lluvia para las próximas 24 horas.",
-        from_="+16612470305",
-        to="+573188625128",
-    )
+    pass
+    #message = client.messages.create(
+        #body="Hay pronóstico de lluvia para las próximas 24 horas.",
+        #from_="+16612470305",
+        #to="+573188625128",
+    #)
 
-    print(message.body)
+    #print(message.body)
 
 #print(data["list"][0]["weather"][0]["id"])
